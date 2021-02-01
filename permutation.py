@@ -6,7 +6,7 @@ Created on Mon Dec 14 14:11:32 2020
 @author: mattwint
 """
 
-def perm(X, Y, perms=1000, test='rel', alpha=.05, nan='propagate', antigravity='False'):
+def perm(X, Y, perms=1000, test='rel', alpha=.05, nan='propagate'):
     """Takes two equally shaped sets of data and performs a 2 sample permutation 
     T-test. This test can handel nan values, so if your sampels are not equal 
     in size you can inset nan's were needed. Data can be 1, 2, 3, or 4 
@@ -42,9 +42,6 @@ def perm(X, Y, perms=1000, test='rel', alpha=.05, nan='propagate', antigravity='
         raise ValueError('datasets have diffrent dimensions')
     
     dims = len(np.array(X).shape) # find dimensions of data
-
-    if antigravity=='True':
-        import antigravity
 
 ##################### 4 dimensions to data ####################################
     if dims == 4:
